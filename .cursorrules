@@ -1,0 +1,4 @@
+Use Tailwind CSS for styling.
+Use Next.js for the framework.
+Use React Server Components for any component that doesn't require client-side interactivity.
+Use shadcn/ui components, espeically those saved in the /components/ui folder.

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Card } from '@/components/ui/card'
+import CV from './cv'
 
 export function CVGenerator() {
   const [jobDescription, setJobDescription] = useState('')
@@ -51,8 +52,7 @@ export function CVGenerator() {
       </form>
       {generatedCV && (
         <Card className="p-4">
-          <h2 className="text-xl font-semibold mb-2">Generated CV</h2>
-          <pre className="whitespace-pre-wrap">{generatedCV}</pre>
+          <CV />
         </Card>
       )}
     </div>
