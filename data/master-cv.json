@@ -1,0 +1,19 @@
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "skills": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Python",
+      "Data Analysis",
+      "Machine Learning",
+      "Project Management"
+    ],
+    "experience": [
+      "Senior Developer at Tech Co. (2018-2023)",
+      "Data Analyst at Data Corp. (2015-2018)",
+      "Junior Developer at Startup Inc. (2013-2015)"
+    ],
+    "education": "Bachelor of Science in Computer Science, University of Technology (2013)"
+  }

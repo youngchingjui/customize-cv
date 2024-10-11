@@ -1,5 +1,3 @@
-'use client'
-
 import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
@@ -8,7 +6,7 @@ import path from 'path'
 // In a real application, you would integrate with an actual LLM API
 function mockLLMProcessing(jobDescription: string, masterCV: any): string {
   // Simple logic to demonstrate customization
-  const relevantSkills = masterCV.skills.filter(skill =>
+  const relevantSkills = masterCV.skills.filter((skill: string) =>
     jobDescription.toLowerCase().includes(skill.toLowerCase())
   )
 
@@ -25,7 +23,7 @@ Relevant Skills:
 ${relevantSkills.join(', ')}
 
 Work Experience:
-${masterCV.experience.map(exp => `- ${exp}`).join('\n')}
+${masterCV.experience.map((exp: string) => `- ${exp}`).join('\n')}
 
 Education:
 ${masterCV.education}
