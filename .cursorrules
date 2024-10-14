@@ -1,4 +1,28 @@
+# Cursor Rules
+
+## General guidance
+
 Use Tailwind CSS for styling.
 Use Next.js for the framework.
 Use React Server Components for any component that doesn't require client-side interactivity.
 Use shadcn/ui components, espeically those saved in the /components/ui folder.
+
+## Context about this application
+
+This NextJS application will let people customize their CVs.
+
+They will upload a "master" CV, that has an exhaustive list of all of their accomplishments. 
+
+Then, based on a job description they input, our app will curate a customized CV from the uploaded "master" cv.
+
+## User stories
+
+As a user, I want to be able to upload my CV so that I can customize it.
+
+As a user, I want to be able to input a job description so that I can get a customized CV.
+
+## Acceptance criteria
+
+Given I am on the homepage, when I input a job description, then I should receive a customized version of my CV.
+
+Given my customized CV, I want to be able to download it as a PDF.
