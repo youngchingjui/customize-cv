@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import fs from 'fs'
+import fs from 'fs/promises'
 import path from 'path'
 import { CVData, CVDataSchema } from '@/models/cv'
 import { zodResponseFormat } from 'openai/helpers/zod.mjs'
@@ -13,10 +13,14 @@ const openai = new OpenAI({
 export async function POST(req: Request) {
   const { jobDescription } = await req.json()
 
+  if (!process.env.OPENAI_API_KEY) {
+    console.error('OpenAI API key is missing');
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
+
   try {
-    // Read the master CV from a JSON file
     const masterCVPath = path.join(process.cwd(), 'data', 'mock-cv.json')
-    const masterCVRaw = fs.readFileSync(masterCVPath, 'utf8')
+    const masterCVRaw = await fs.readFile(masterCVPath, 'utf8')
     const masterCV: CVData = JSON.parse(masterCVRaw)
 
     // Call OpenAI API to generate a customized CV
@@ -37,9 +41,10 @@ export async function POST(req: Request) {
       response_format: zodResponseFormat(CVDataSchema, 'CV'),
     });
 
-    const generatedCVText = completion.choices[0].message.content
+    const generatedCVText = completion.choices?.[0]?.message?.content;
 
     if (!generatedCVText) {
+      console.error('No content in the generated CV');
       throw new Error('Failed to generate CV text');
     }
 
@@ -48,7 +53,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json(generatedCV)
   } catch (error) {
-    console.error('Error generating CV:', error)
+    console.error('Error generating CV:', error instanceof Error ? error.message : error)
     return NextResponse.json({ error: 'Failed to generate CV' }, { status: 500 })
   }
 }
