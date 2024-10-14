@@ -5,10 +5,11 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Card } from '@/components/ui/card'
 import CV from './cv'
+import { CVData, CVDataSchema } from '../models/cv'
 
 export function CVGenerator() {
   const [jobDescription, setJobDescription] = useState('')
-  const [generatedCV, setGeneratedCV] = useState('')
+  const [generatedCV, setGeneratedCV] = useState<CVData | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -29,7 +30,10 @@ export function CVGenerator() {
       }
 
       const data = await response.json()
-      setGeneratedCV(data.cv)
+
+      // Validate the data
+      const parsedData = CVDataSchema.parse(data)
+      setGeneratedCV(parsedData)
     } catch (error) {
       console.error('Error generating CV:', error)
     } finally {
@@ -52,7 +56,7 @@ export function CVGenerator() {
       </form>
       {generatedCV && (
         <Card className="p-4">
-          <CV />
+          <CV data={generatedCV} />
         </Card>
       )}
     </div>
