@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Card } from '@/components/ui/card'
 import CV from './cv'
 import { CVData, CVDataSchema } from '../models/cv'
+import masterCV from '../data/mock-cv.json' 
 
 export function CVGenerator() {
   const [jobDescription, setJobDescription] = useState('')
@@ -22,7 +23,7 @@ export function CVGenerator() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ jobDescription }),
+        body: JSON.stringify({ jobDescription, masterCV }),
       })
 
       if (!response.ok) {

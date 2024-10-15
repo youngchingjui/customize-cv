@@ -10,8 +10,9 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// Receives job description and master CV, returns a customized CV
 export async function POST(req: Request) {
-  const { jobDescription } = await req.json()
+  const { jobDescription, masterCV }: { jobDescription: string, masterCV: CVData } = await req.json()
 
   if (!process.env.OPENAI_API_KEY) {
     console.error('OpenAI API key is missing');
@@ -19,9 +20,6 @@ export async function POST(req: Request) {
   }
 
   try {
-    const masterCVPath = path.join(process.cwd(), 'data', 'mock-cv.json')
-    const masterCVRaw = await fs.readFile(masterCVPath, 'utf8')
-    const masterCV: CVData = JSON.parse(masterCVRaw)
 
     // Call OpenAI API to generate a customized CV
     const completion = await openai.chat.completions.create({
