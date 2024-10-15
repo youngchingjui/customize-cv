@@ -7,9 +7,9 @@ const CV: React.FC<{ data: CVData }> = ({ data }) => {
       <div className="flex justify-between items-baseline border-b-2 border-blue-900 pb-2">
         <h1 className="text-3xl text-blue-800 mb-0">{data.name}</h1>
         <div className="text-right text-gray-600">
-          <a href={`tel:${data.contact.phone}`} className="text-blue-800 hover:underline">{data.contact.phone}</a> |  
-          <a href={`mailto:${data.contact.email}`} className="text-blue-800 hover:underline">{data.contact.email}</a> |  
-          <a href={data.contact.github} className="text-blue-800 hover:underline">Github</a> | 
+          <a href={`tel:${data.contact.phone}`} className="text-blue-800 hover:underline">{data.contact.phone}</a>&nbsp;|&nbsp;
+          <a href={`mailto:${data.contact.email}`} className="text-blue-800 hover:underline">{data.contact.email}</a>&nbsp;|&nbsp;
+          <a href={data.contact.github} className="text-blue-800 hover:underline">Github</a>&nbsp;|&nbsp;
           <a href={data.contact.linkedin} className="text-blue-800 hover:underline">LinkedIn</a>
         </div>
       </div>
