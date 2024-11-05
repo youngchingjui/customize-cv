@@ -22,7 +22,7 @@ async function fetchCoverLetterList() {
 
   const data = await response.json();
   return data
-    .filter((file: any) => file.name.endsWith('.md'))
+    .filter((file: any) => file.name.endsWith(".md"))
     .map((file: any) => file.name.replace(".md", ""));
 }
 
@@ -34,24 +34,22 @@ const CoverLettersLayout = async ({
   const coverLetterList = await fetchCoverLetterList();
 
   return (
-    <div className="flex min-h-screen">
-      <SidebarProvider>
-        <Sidebar className="">
-          <SidebarContent>
-            <h2 className="text-xl font-bold mb-4">Cover Letters</h2>
-            <ul>
-              {coverLetterList.map((slug: string) => (
-                <li key={slug} className="mb-2">
-                  <Link href={`/cover-letters/${slug}`}>{slug}</Link>
-                </li>
-              ))}
-            </ul>
-          </SidebarContent>
-        </Sidebar>
+    <SidebarProvider>
+      <Sidebar className="">
+        <SidebarContent>
+          <h2 className="text-xl font-bold mb-4">Cover Letters</h2>
+          <ul>
+            {coverLetterList.map((slug: string) => (
+              <li key={slug} className="mb-2">
+                <Link href={`/cover-letters/${slug}`}>{slug}</Link>
+              </li>
+            ))}
+          </ul>
+        </SidebarContent>
+      </Sidebar>
 
       <main className="flex-1 p-8">{children}</main>
-      </SidebarProvider>
-    </div>
+    </SidebarProvider>
   );
 };
 
