@@ -1,0 +1,86 @@
+{
+    "name": "Ching Jui Young",
+    "contact": {
+      "phone": "+1 (626) 539-5134",
+      "email": "young.chingjui@youngandai.com",
+      "github": "https://github.com/youngchingjui",
+      "linkedin": "https://www.linkedin.com/in/chingjuiyoung/"
+    },
+    "summary": "Dynamic AI Product Manager with over 13 years of experience in leading the development of scalable AI solutions and ML-powered products. Proven track record in managing cross-functional teams, developing strategic partnerships, and delivering products that enhance AI research and model performance. Proficient in Python, SQL, and advanced machine learning techniques. Eager to leverage technical expertise and leadership skills at Scale to drive the next generation of AI applications.",
+    "experience": [
+      {
+        "title": "Partner",
+        "company": "Young & AI",
+        "location": "Shanghai, China",
+        "period": "Jan 2018 – Present",
+        "responsibilities": [
+          "Led sales and project discussions as technical advisor to strategic clients, embedding deeply to support the development of innovative AI applications using open-source models.",
+          "Prototyped and demonstrated AI solutions, showcasing platform capabilities to maximize business impact.",
+          "Built and maintained strong relationships with C-suite clients, ensuring successful deployment and scaling of AI solutions.",
+          "Developed and managed machine learning models for a two-sided marketplace startup, creating a Health Index Score from dietary data; built digital products and advised on platform strategy. Python, Databricks, AWS, PyTorch.",
+          "Developed an AI system for German manufacturing company to efficiently extract key information from RFQs. Used various Retrieval Augmented Generation (RAG) methods, including vector database embeddings, re-rankers, and full context injections. Architected a multi-agent architecture system, where multiple LLMs are coordinated to complete a more complex task. Led to order of magnitude improved accuracy and complete responses over baseline GPT-4 responses. OpenAI, LangChain, LangSmith, LangGraph, postgresql, Python, FastAPI, nginx, Microsoft Azure services (OpenAI Studio, Azure VMs, Blob Storage)",
+          "Designed, built, tested, and implemented an image classification deep convolutional neural network for an Australian real estate company to identify residential housing features from Google Street View Images. Fine-tuned the model to achieve over 70% accuracy in labeling and describing houses within images. AWS SageMaker, Mechanical Turk, Python, PyTorch",
+          "Developed trend prediction engine for global FMCG company. Collaborated with across international teams to identify user needs and ensure usability and reliability of dashboards.",
+          "Developed performant Tableau dashboards for internal and external client usage for a French audit company. Managed databases with millions of data points on Tableau servers.",
+          "Managed, re-designed, and built a new publication website for Swiss publishing company. Created user analytics dashboards for internal tracking and incremental improvements. Developed front-end webpage with a new design, content management system, and search functionality. NextJS, React, Django, Wagtail, Github Actions, docker-compose, Python, PostgreSQL, grafana, headless CMS, SEO-optimization",
+          "Developed a web scraping service to auto-fill government website forms for French travel services company. Selenium, puppeteer, Electron, React."
+        ]
+      },
+      {
+        "title": "Senior Analyst",
+        "company": "McKinsey and Co. | Finalta",
+        "location": "Singapore",
+        "period": "Jan 2016 – Jan 2018",
+        "responsibilities": [
+          "Conducted analysis on Big Data sets to identify complex data relationships and pattern sets.",
+          "Advised retail banks on strategic and operational solutions driven by data analytics and best practice case studies."
+        ]
+      },
+      {
+        "title": "Management Consultant",
+        "company": "PricewaterhouseCoopers Consulting",
+        "location": "Singapore",
+        "period": "Jun 2013 – Jan 2016",
+        "responsibilities": [
+          "Conducted statistical tests to validate stress test models for major U.S. banks, utilizing SAS and R programming.",
+          "Developed strategic IT frameworks and efficiency improvements for multinational clients."
+        ]
+      }
+    ],
+    "skills": [
+      "Generative AI",
+      "Large Language Models",
+      "OpenAI",
+      "Python",
+      "JavaScript",
+      "Prototyping",
+      "API Platforms",
+      "Customer Engagement",
+      "Cross-Functional Collaboration",
+      "LangChain",
+      "LangSmith",
+      "LangGraph",
+      "Mylvus",
+      "React",
+      "NextJS",
+      "PyTorch",
+      "TensorFlow",
+      "AWS Services",
+      "FastAPI",
+      "Microsoft Azure services",
+      "Docker",
+      "Healthcare AI"
+    ],
+    "education": [
+      {
+        "institution": "University of California, San Diego",
+        "degree": "B.S. Management Science with Distinction | GPA: 3.8/4.0",
+        "details": "Cum Laude, Phi Beta Kappa Scholar, Omicron Delta Epsilon Honors Society"
+      },
+      {
+        "institution": "University of California, San Diego",
+        "degree": "B.A. Communication with Distinction | GPA: 3.8/4.0",
+        "details": "Cum Laude, Phi Beta Kappa Scholar, Omicron Delta Epsilon Honors Society"
+      }
+    ]
+  }
