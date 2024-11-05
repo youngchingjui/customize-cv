@@ -24,7 +24,7 @@ const CoverLetterDetail = async ({ params }: { params: { slug: string } }) => {
   const markdownContent = await fetchMarkdownContent(slug as string);
 
   return (
-    <div className="bg-white text-gray-800 p-8">
+    <div className="printable-content bg-white text-gray-800 p-8">
       <header className="mb-8 flex justify-between items-baseline border-b-2 border-blue-900 pb-2.5">
         <h1 className="text-3xl font-bold text-gray-800">Ching Jui Young</h1>
       </header>
