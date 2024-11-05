@@ -4,7 +4,6 @@ import {
   Sidebar,
   SidebarContent,
   SidebarProvider,
-  SidebarTrigger,
 } from "../../components/ui/sidebar";
 
 async function fetchCoverLetterList() {

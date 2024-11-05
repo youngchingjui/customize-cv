@@ -24,12 +24,19 @@ const CoverLetterDetail = async ({ params }: { params: { slug: string } }) => {
   const markdownContent = await fetchMarkdownContent(slug as string);
 
   return (
-    <div className=" bg-white text-gray-800 p-8 ">
+    <div className="bg-white text-gray-800 p-8">
       <header className="mb-8 flex justify-between items-baseline border-b-2 border-blue-900 pb-2.5">
-        <h1 className="text-3xl font-bold text-gray-800">{slug}</h1>
+        <h1 className="text-3xl font-bold text-gray-800">Ching Jui Young</h1>
       </header>
       <main className="mt-4 text-sm leading-7">
-        <ReactMarkdown className="mb-4" children={markdownContent} />
+        <ReactMarkdown
+          className="mb-4"
+          components={{
+            p: ({ node, ...props }) => <p className="my-4" {...props} />,
+          }}
+        >
+          {markdownContent}
+        </ReactMarkdown>
       </main>
     </div>
   );
