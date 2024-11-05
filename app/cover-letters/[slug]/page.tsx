@@ -1,20 +1,34 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import React from "react";
+import ReactMarkdown from "react-markdown";
 
 async function fetchMarkdownContent(slug: string) {
-  const response = await fetch(`https://api.github.com/repos/youngchingjui/resume/contents/Cover%20Letters/${slug}.md`, {
-    headers: {
-      Authorization: `token ${process.env.GITHUB_TOKEN}`,
-    },
-  });
+  const decodedSlug = decodeURIComponent(slug);
+  const response = await fetch(
+    `https://api.github.com/repos/youngchingjui/resume/contents/Cover Letters/${decodedSlug}.md`,
+    {
+      headers: {
+        Authorization: `token ${process.env.GITHUB_TOKEN}`,
+      },
+    }
+  );
 
   if (!response.ok) {
-    throw new Error('Failed to fetch markdown content');
+    throw new Error("Failed to fetch markdown content");
   }
 
   const data = await response.json();
-  const content = Buffer.from(data.content, 'base64').toString('utf-8');
+  const content = Buffer.from(data.content, "base64").toString("utf-8");
   return content;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params;
+  const title = `Ching Jui Young - Cover Letter - ${slug}`;
+  return { title };
 }
 
 const CoverLetterDetail = async ({ params }: { params: { slug: string } }) => {
@@ -42,4 +56,4 @@ const CoverLetterDetail = async ({ params }: { params: { slug: string } }) => {
   );
 };
 
-export default CoverLetterDetail; 
+export default CoverLetterDetail;
