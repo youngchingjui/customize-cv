@@ -1,6 +1,8 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
+export const revalidate = 10
+
 async function fetchMarkdownContent(slug: string) {
   const decodedSlug = decodeURIComponent(slug);
   const response = await fetch(
