@@ -29,7 +29,8 @@ export async function generateMetadata({
   params: { slug: string };
 }) {
   const { slug } = params;
-  const title = `Ching Jui Young - Cover Letter - ${slug}`;
+  const decodedSlug = decodeURIComponent(slug);
+  const title = `Ching Jui Young - Cover Letter - ${decodedSlug}`;
   return { title };
 }
 
