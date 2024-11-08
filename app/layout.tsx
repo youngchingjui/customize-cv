@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import { Sidebar, SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { FileEdit, FilePlus, FileText } from "lucide-react";
+import PageTitle from "@/components/PageTitle";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -50,7 +51,7 @@ export default function RootLayout({
           <div className="flex-1 flex flex-col p-6">
             <div className="flex items-center mb-4">
               <SidebarTrigger />
-              <h1 className="text-2xl font-bold ml-4">CV Manager</h1>
+              <PageTitle/>
             </div>
             <SidebarInset>
             {children}
