@@ -35,7 +35,7 @@ const CoverLettersLayout = async ({
 
   return (
     <SidebarProvider>
-      <Sidebar className="">
+      <Sidebar collapsible="none" className="p-4">
         <SidebarContent>
           <h2 className="text-xl font-bold mb-4">Cover Letters</h2>
           <ul>
@@ -47,8 +47,7 @@ const CoverLettersLayout = async ({
           </ul>
         </SidebarContent>
       </Sidebar>
-
-      <main className="flex-1 p-8">{children}</main>
+      <main className="flex-1">{children}</main>
     </SidebarProvider>
   );
 };
