@@ -37,7 +37,6 @@ const CoverLettersLayout = async ({
     <SidebarProvider>
       <Sidebar collapsible="none" className="p-4">
         <SidebarContent>
-          <h2 className="text-xl font-bold mb-4">Cover Letters</h2>
           <ul>
             {coverLetterList.map((slug: string) => (
               <li key={slug} className="mb-2">

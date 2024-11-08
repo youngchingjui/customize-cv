@@ -13,7 +13,9 @@ const PageTitle = () => {
         return null;
     }
 
-    const title = routeTitleMap[pathname] || 'CV Manager';
+    // Extract the first path segment
+    const firstPathSegment = `/${pathname.split('/')[1]}`;
+    const title = routeTitleMap[firstPathSegment] || 'CV Manager';
 
     return <h1 className="text-2xl font-bold ml-4">{title}</h1>;
 }
