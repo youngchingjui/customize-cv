@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
 import { Sidebar, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { FileEdit, FilePlus, FileText } from "lucide-react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,13 +33,17 @@ export default function RootLayout({
       >
         <SidebarProvider>
           <Sidebar className="p-4">
-            <Link href="/" className="block mb-2">
+            <h2 className="text-xl font-bold mb-4">CV Manager</h2>
+            <Link href="/" className="flex items-center mb-4">
+              <FileEdit className="mr-2 h-4 w-4" />
               Customize CV
             </Link>
-            <Link href="/update-cv" className="block mb-2">
+            <Link href="/update-cv" className="flex items-center mb-4">
+              <FilePlus className="mr-2 h-4 w-4" />
               Update Master CV
             </Link>
-            <Link href="/cover-letters" className="block mb-2">
+            <Link href="/cover-letters" className="flex items-center mb-4">
+              <FileText className="mr-2 h-4 w-4" />
               Cover Letters
             </Link>
           </Sidebar>
