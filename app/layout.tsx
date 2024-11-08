@@ -2,13 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+import { Sidebar, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,32 +30,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Customize CV
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/update-cv" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Update Master CV
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/cover-letters" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Cover Letters
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-        {children}
+        <SidebarProvider>
+          <Sidebar className="p-4">
+            <Link href="/" className="block mb-2">
+              Customize CV
+            </Link>
+            <Link href="/update-cv" className="block mb-2">
+              Update Master CV
+            </Link>
+            <Link href="/cover-letters" className="block mb-2">
+              Cover Letters
+            </Link>
+          </Sidebar>
+          <div className="flex-1 flex flex-col p-6">
+            <div className="flex items-center mb-4">
+              <SidebarTrigger />
+              <h1 className="text-2xl font-bold ml-4">CV Manager</h1>
+            </div>
+            {children}
+          </div>
+        </SidebarProvider>
       </body>
     </html>
   );

@@ -106,3 +106,15 @@ body {
     top: 0;
   }
 }
+
+@media print {
+  .printable-content {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    padding: 20mm;
+    box-shadow: none;
+    background: white;
+    color: black;
+  }
+}
