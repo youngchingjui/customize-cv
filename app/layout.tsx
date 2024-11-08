@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <SidebarProvider>
           <Sidebar variant="inset" collapsible="offcanvas" className="p-4">
-            <h2 className="text-xl font-bold mb-4">CV Manager</h2>
+            <h1 className="text-2xl font-bold mb-4">CV Manager</h1>
             <Link href="/" className="flex items-center mb-4">
               <FileEdit className="mr-2 h-4 w-4" />
               Customize CV

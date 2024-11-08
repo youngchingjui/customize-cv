@@ -17,7 +17,7 @@ const PageTitle = () => {
     const firstPathSegment = `/${pathname.split('/')[1]}`;
     const title = routeTitleMap[firstPathSegment] || 'CV Manager';
 
-    return <h1 className="text-2xl font-bold ml-4">{title}</h1>;
+    return <h2 className="text-xl font-bold ml-4">{title}</h2>;
 }
 
 export default PageTitle;
