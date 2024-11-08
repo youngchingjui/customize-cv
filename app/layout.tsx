@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
-import { Sidebar, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { Sidebar, SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { FileEdit, FilePlus, FileText } from "lucide-react";
 
 const geistSans = localFont({
@@ -32,7 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SidebarProvider>
-          <Sidebar className="p-4">
+          <Sidebar variant="inset" collapsible="offcanvas" className="p-4">
             <h2 className="text-xl font-bold mb-4">CV Manager</h2>
             <Link href="/" className="flex items-center mb-4">
               <FileEdit className="mr-2 h-4 w-4" />
@@ -52,7 +52,9 @@ export default function RootLayout({
               <SidebarTrigger />
               <h1 className="text-2xl font-bold ml-4">CV Manager</h1>
             </div>
+            <SidebarInset>
             {children}
+            </SidebarInset>
           </div>
         </SidebarProvider>
       </body>
