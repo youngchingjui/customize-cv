@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
-import { Sidebar, SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import {
+  Sidebar,
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
 import { FileEdit, FilePlus, FileText } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
 
@@ -47,15 +52,17 @@ export default function RootLayout({
               <FileText className="mr-2 h-4 w-4" />
               Cover Letters
             </Link>
+            <Link href="/posts" className="flex items-center mb-4">
+              <FileText className="mr-2 h-4 w-4" />
+              Posts
+            </Link>
           </Sidebar>
           <div className="flex-1 flex flex-col p-6">
             <div className="flex items-center mb-4">
               <SidebarTrigger />
-              <PageTitle/>
+              <PageTitle />
             </div>
-            <SidebarInset>
-            {children}
-            </SidebarInset>
+            <SidebarInset>{children}</SidebarInset>
           </div>
         </SidebarProvider>
       </body>
