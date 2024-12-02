@@ -1,3 +1,4 @@
+import DownloadNewsletterButton from "@/components/DownloadNewsletterButton";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
@@ -41,7 +42,8 @@ const PostDetail = async ({ params }: { params: { slug: string } }) => {
   const markdownContent = await fetchMarkdownContent(slug as string);
 
   return (
-    <div className="printable-content bg-white text-gray-800 p-8">
+    <>
+      <DownloadNewsletterButton postRef={postRef} />
       <ReactMarkdown
         className="mb-4"
         components={{
@@ -50,7 +52,7 @@ const PostDetail = async ({ params }: { params: { slug: string } }) => {
       >
         {markdownContent}
       </ReactMarkdown>
-    </div>
+    </>
   );
 };
 
