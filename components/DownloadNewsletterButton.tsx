@@ -7,7 +7,7 @@ import html2canvas from "html2canvas";
 const DownloadNewsletterButton = ({
   postRef,
 }: {
-  postRef: React.RefObject<HTMLElement>;
+  postRef: React.RefObject<HTMLDivElement>;
 }) => {
   const capturePost = async () => {
     if (!postRef.current) return;

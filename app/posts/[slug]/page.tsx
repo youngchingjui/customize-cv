@@ -1,6 +1,4 @@
-import DownloadNewsletterButton from "@/components/DownloadNewsletterButton";
-import React from "react";
-import ReactMarkdown from "react-markdown";
+import NewsletterContentWrapper from "@/components/NewsletterContentWrapper";
 
 export const revalidate = 10;
 
@@ -43,15 +41,7 @@ const PostDetail = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <>
-      <DownloadNewsletterButton postRef={postRef} />
-      <ReactMarkdown
-        className="mb-4"
-        components={{
-          p: ({ node, ...props }) => <p className="my-4" {...props} />,
-        }}
-      >
-        {markdownContent}
-      </ReactMarkdown>
+      <NewsletterContentWrapper markdownContent={markdownContent} />
     </>
   );
 };

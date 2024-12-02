@@ -43,7 +43,7 @@ const PostsLayout = async ({ children }: { children: React.ReactNode }) => {
           </ul>
         </SidebarContent>
       </Sidebar>
-      <main className="flex-1">{children}</main>
+      <div className="flex-1">{children}</div>
     </SidebarProvider>
   );
 };
